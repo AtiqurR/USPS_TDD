@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.baseClass.BaseClass;
+import com.signInData.SignInData;
 
 public class MainPage {
 
@@ -55,6 +56,14 @@ public class MainPage {
 		signIn();
 		userNameStep(userNameInput);
 		passWordStep(passWordInput);
+		signInElement();
+	}
+	public void mainPageStepData(WebDriver driver, SignInData data) {
+		quickToolStep(driver);
+		informedDeliverStep();
+		signIn();
+		userNameStep(data.getUserName());
+		passWordStep(data.getPassWord());
 		signInElement();
 	}
 
